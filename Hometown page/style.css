@@ -1,0 +1,192 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Basic Colors */
+:root {
+    --main-color: #D2691E; /* Warm Marrakech-inspired orange */
+    --secondary-color: #A0522D; /* Rich brown */
+    --accent-color: #FFD700; /* Gold accent */
+    --text-color: #333;
+}
+
+.autoRotate{
+    mix-blend-mode: darken;
+    width: 300px;
+    animation: autoRotateAnimation ;
+    animation-timeline: view();
+    margin: 0 38%;
+}
+@keyframes autoRotateAnimation{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* Body Styling */
+body {
+    color: var(--text-color);
+    line-height: 1.6;
+    background-image: url("plus-beaux-riads-a-marrakech.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    
+}
+
+/* Hero Section */
+.hero {
+    background: url('marrakech-hero.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.overlay {
+    background: linear-gradient(rgba(210, 105, 30, 0.8), rgba(128, 128, 128, 0.8)); /* Adjust the alpha value (0.8) for transparency */
+    padding: 20px;
+    animation: autoBlur 2s ease-out;
+}
+@keyframes autoBlur{
+    from{
+        filter: blur(10px);
+    }
+    to{
+        filter: blur(0px);
+    }
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background: var(--main-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--accent-color);
+}
+
+/* Highlights Section */
+.highlights {
+    padding: 50px;
+    text-align: center;
+    background: #FAF3E0;
+}
+@keyframes autoShowAnimation{
+    from{
+        opacity: 0;
+        transform: translateY(200px) scale(0.3);
+    }
+    to{
+        opacity: 1;
+        transform:translateY(0) scale(1);
+    }
+    
+}
+.highlights h2 {
+    color: var(--secondary-color);
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.highlight-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation:autoShowAnimation;
+    animation-timeline: view(40% auto);
+}
+
+.card {
+    background: white;
+    width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+
+}
+
+.card h3 {
+    font-size: 1.5em;
+    color: var(--main-color);
+    margin: 15px;
+}
+
+.card p {
+    padding: 0 15px 20px;
+}
+/* profil section */
+.avatar{
+    width:300px;
+    padding:20px;
+}
+.yourguideprofile{
+    width:auto;
+    padding:0;
+    margin:200px;  
+    background:#f4a261;
+    border-radius:10px;
+    animation:autoShowAnimation;
+    animation-timeline:view(60% auto);
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction: row;
+    text-align:center; 
+    gap: 20px;
+    border-bottom: 10px solid rgb(22, 20, 20);
+ }
+ .yourguideprofile h2{
+    margin-bottom: 40px;
+ }
+ .yourguideprofile p{
+    margin-bottom: 20px;
+    font-size: medium;
+ }
+ 
+/* Contact Section */
+.contact {
+    background: var(--secondary-color);
+    color: rgb(215, 208, 208);
+    padding: 40px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.contact p {
+    margin-bottom: 20px;
+}
